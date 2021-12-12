@@ -57,13 +57,18 @@ sudo make install
 #########################
 #getting my dot files and .config files from github 
 cd $HOME
-git clone https://github.com/funtako/dot-files.git $HOME
+#clone my dot files to the home directory it will be in ~/dot-files
+git clone https://github.com/funtako/dot-files.git 
 #give all the scripts in that folder ability to execute them by changing the permissions
-sudo chmod +x $HOME/scripts/* 
+sudo chmod +x $HOME/dot-files/scripts/* 
 #give them all the owner as root
-sudo chown root:root $HOME/scripts/*
+sudo chown root:root $HOME/dot-files/scripts/*
 #copy all the scripts to /usr/local/bin
 sudo cp $HOME/scripts/* /usr/local/bin
+#move dot files files to the home directory
+mv $HOME/dot-files/* $Home/
+#delete that directory dot-files not needed anymore
+rmdir $HOME/dot-files/
 ############################################
 
 ##install gui file manager
