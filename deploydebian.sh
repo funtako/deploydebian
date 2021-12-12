@@ -16,17 +16,18 @@ sudo apt-get install -y libx11-dev libxft-dev libxinerama-dev
 
 #clone my fork of dwm
 git clone https://github.com/funtako/dwm.git $sucklessloc/dwm/
-make $sucklessloc/dwm/
-sudo make install $sucklessloc/dwm/
+cd $sucklessloc/dwm/
+make
+sudo make install 
 
 #clone my fork of st
 git clone https://github.com/funtako/st.git $sucklessloc/st/
-make $sucklessloc/st/
-sudo make install $sucklessloc/st/
+cd $sucklessloc/st/
+make
+sudo make install 
 
 #clone my fork of slstatus 
 git clone https://github.com/funtako/slstatus.git $sucklessloc/slstatus/
-make $sucklessloc/slstatus/
-sudo make install $sucklessloc/slstatus/
-
-
+cd $sucklessloc/slstatus/
+make
+sudo make install 
