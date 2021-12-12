@@ -7,7 +7,7 @@ sudo apt upgrade -y
 sucklessloc=$HOME/suckless
 
 # install some important programs
-sudo apt-get update; apt-get install -y vim xinit git build-essential wget curl
+sudo apt-get install -y vim xinit git build-essential wget curl
 
 # install dependencies for suckless dwm
 sudo apt-get install -y libx11-dev libxft-dev libxinerama-dev
