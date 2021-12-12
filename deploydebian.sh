@@ -1,4 +1,9 @@
 #!/bin/bash
+
+#update and install all updates
+sudo apt update
+sudo apt upgrade -y
+
 sucklessloc=$HOME/suckless
 
 # install some important programs
@@ -11,10 +16,17 @@ sudo apt-get install -y libx11-dev libxft-dev libxinerama-dev
 
 #clone my fork of dwm
 git clone https://github.com/funtako/dwm.git $sucklessloc/dwm/
+make $sucklessloc/dwm/
+sudo make $sucklessloc/dwm/
 
 #clone my fork of st
 git clone https://github.com/funtako/st.git $sucklessloc/st/
+make $sucklessloc/st/
+sudo make $sucklessloc/st/
 
 #clone my fork of slstatus 
 git clone https://github.com/funtako/slstatus.git $sucklessloc/slstatus/
+make $sucklessloc/slstatus/
+sudo make $sucklessloc/slstatus/
+
 
