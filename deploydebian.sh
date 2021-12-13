@@ -62,16 +62,16 @@ git clone https://github.com/funtako/dot-files.git
 #give all the scripts in that folder ability to execute them by changing the permissions
 sudo chmod +x $HOME/dot-files/scripts/* 
 #give them all the owner as root
-echo sudo chown root:root $HOME/dot-files/scripts/*
+echo "sudo chown root:root $HOME/dot-files/scripts/*
 sudo chown root:root $HOME/dot-files/scripts/*
 #copy all the scripts to /usr/local/bin
-echo sudo cp $HOME/dot-files/scripts/* /usr/local/bin
+echo "sudo cp $HOME/dot-files/scripts/* /usr/local/bin"
 sudo cp $HOME/dot-files/scripts/* /usr/local/bin
 #move dot files files to the home directory
-echo sudo mv $HOME/dot-files/* $Home/
+echo "sudo mv $HOME/dot-files/* $Home/"
 sudo mv $HOME/dot-files/* $Home/
 #delete that directory dot-files not needed anymore
-echo rmdir $HOME/dot-files/
+echo "rmdir $HOME/dot-files/"
 rmdir $HOME/dot-files/
 ############################################
 
