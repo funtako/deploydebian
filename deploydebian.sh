@@ -56,23 +56,25 @@ sudo make install
 
 #########################
 #getting my dot files and .config files from github 
+################################shopt -s dotglob #allows you to move .files with the mv * command
 cd $HOME
 #clone my dot files to the home directory it will be in ~/dot-files
 git clone https://github.com/funtako/dot-files.git 
 #give all the scripts in that folder ability to execute them by changing the permissions
 sudo chmod +x $HOME/dot-files/scripts/* 
 #give them all the owner as root
-echo "sudo chown root:root $HOME/dot-files/scripts/* "
 sudo chown root:root $HOME/dot-files/scripts/*
 #copy all the scripts to /usr/local/bin
-echo "sudo cp $HOME/dot-files/scripts/* /usr/local/bin"
 sudo cp $HOME/dot-files/scripts/* /usr/local/bin
+#TODO: NEEED TO CHECK IF .config DIRECTORY EXISTS IN $HOME THEN IF NOT CREATE IT
+#TODO: IF YES MOVE THE CONTENTS OF .config in dot-files to the .config directory in $HOME
+#TODO: then see what happens if you have 
+#TODO: ACTUALLY INSTEAD OF USING MV I THINK I WILL DO CP BECAUSE THAT ALLOWS MERGING
+#TODO: THEN AFTER COPYING JUST RM -RF the source of the cp
 #move dot files files to the home directory
-echo "sudo mv $HOME/dot-files/* $HOME/"
-sudo mv $HOME/dot-files/* $HOME/
+sudo cp -r $HOME/dot-files/* $HOME/
 #delete that directory dot-files not needed anymore
-echo "rmdir $HOME/dot-files/"
-rmdir $HOME/dot-files/
+rm -rf $HOME/dot-files/
 ############################################
 
 ##install gui file manager
