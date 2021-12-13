@@ -69,7 +69,7 @@ echo "sudo cp $HOME/dot-files/scripts/* /usr/local/bin"
 sudo cp $HOME/dot-files/scripts/* /usr/local/bin
 #move dot files files to the home directory
 echo "sudo mv $HOME/dot-files/* $HOME/"
-sudo mv $HOME/dot-files/* $Home/
+sudo mv $HOME/dot-files/* $HOME/
 #delete that directory dot-files not needed anymore
 echo "rmdir $HOME/dot-files/"
 rmdir $HOME/dot-files/
