@@ -24,6 +24,9 @@ mkdir $HOME/music
 # install some important programs
 sudo apt-get install -y vim xinit git build-essential wget curl
 
+#install rsync - allows me to copy hidden .files properly 
+sudo apt install rsync -y
+
 # install dependencies for suckless dwm
 sudo apt-get install -y libx11-dev libxft-dev libxinerama-dev
 
