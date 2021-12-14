@@ -73,12 +73,6 @@ sudo chmod +x $dotfilesloc/scripts/*
 sudo chown root:root $dotfilesloc/scripts/*
 #copy all the scripts to /usr/local/bin
 sudo cp $dotfilesloc/scripts/* /usr/local/bin
-#TODO: NEEED TO CHECK IF .config DIRECTORY EXISTS IN $HOME THEN IF NOT CREATE IT
-#TODO: IF YES MOVE THE CONTENTS OF .config in dot-files to the .config directory in $HOME
-#TODO: then see what happens if you have 
-#TODO: ACTUALLY INSTEAD OF USING MV I THINK I WILL DO CP BECAUSE THAT ALLOWS MERGING
-#TODO: THEN AFTER COPYING JUST RM -RF the source of the cp
-
 
 #move all the files from my dot-files git repository and put them in my home directory
 #using rsync because cp wasn't letting me move hidden . files
