@@ -21,6 +21,9 @@ dotfilesloc=$HOME/funtako/dot-files
 #create a directory for music this will be the directory for mpd and ncmpcpp
 mkdir $HOME/music
 
+#alsa-utils and pulse audio for sound
+sudo apt install alsa-utils pulseaudio -y
+
 # install some important programs
 sudo apt-get install -y vim xinit git build-essential wget curl
 
@@ -192,3 +195,4 @@ sudo apt install dunst -y
 
 #youtube-dl 
 sudo apt install youtube-dl -y
+
