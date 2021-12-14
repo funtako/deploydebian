@@ -16,6 +16,7 @@ sudo apt update
 sudo apt upgrade -y
 
 sucklessloc=$HOME/suckless
+dotfilesloc=$HOME/funtako/dot-files
 
 #create a directory for music this will be the directory for mpd and ncmpcpp
 mkdir $HOME/music
@@ -59,22 +60,26 @@ sudo make install
 ################################shopt -s dotglob #allows you to move .files with the mv * command
 cd $HOME
 #clone my dot files to the home directory it will be in ~/dot-files
-git clone https://github.com/funtako/dot-files.git 
+git clone https://github.com/funtako/dot-files.git $dotfilesloc
 #give all the scripts in that folder ability to execute them by changing the permissions
-sudo chmod +x $HOME/dot-files/scripts/* 
-#give them all the owner as root
-sudo chown root:root $HOME/dot-files/scripts/*
+sudo chmod +x $dotfilesloc/scripts/* 
+#give the scripts the owner as root
+sudo chown root:root $dotfilesloc/scripts/*
 #copy all the scripts to /usr/local/bin
-sudo cp $HOME/dot-files/scripts/* /usr/local/bin
+sudo cp $dotfilesloc/scripts/* /usr/local/bin
 #TODO: NEEED TO CHECK IF .config DIRECTORY EXISTS IN $HOME THEN IF NOT CREATE IT
 #TODO: IF YES MOVE THE CONTENTS OF .config in dot-files to the .config directory in $HOME
 #TODO: then see what happens if you have 
 #TODO: ACTUALLY INSTEAD OF USING MV I THINK I WILL DO CP BECAUSE THAT ALLOWS MERGING
 #TODO: THEN AFTER COPYING JUST RM -RF the source of the cp
-#move dot files files to the home directory
-sudo cp -r $HOME/dot-files/* $HOME/
-#delete that directory dot-files not needed anymore
-rm -rf $HOME/dot-files/
+
+
+#move all the files from my dot-files git repository and put them in my home directory
+#using rsync because cp wasn't letting me move hidden . files
+echo "rsync -a  $dotfilesloc/dot-files/ $HOME/"
+rsync -a  $dotfilesloc/ $HOME/
+#now we can delete the folder and all files where the dot-files repository was downloaded to
+rm -rf $dotfilesloc
 ############################################
 
 ##install gui file manager
