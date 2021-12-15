@@ -18,6 +18,9 @@ sudo apt upgrade -y
 sucklessloc=$HOME/suckless
 dotfilesloc=$HOME/funtako/dot-files
 
+
+
+
 #create a directory for music this will be the directory for mpd and ncmpcpp
 mkdir $HOME/music
 
@@ -27,12 +30,30 @@ sudo apt install alsa-utils pulseaudio -y
 # install some important programs
 sudo apt-get install -y vim xinit git build-essential wget curl
 
+#unzip .zip files
+sudo apt install unzip -y
+
 #install rsync - allows me to copy hidden .files properly 
 sudo apt install rsync -y
 
 # install dependencies for suckless dwm
 sudo apt-get install -y libx11-dev libxft-dev libxinerama-dev
 
+
+#FONTS################
+#make directory for fonts
+mkdir $HOME/.fonts
+cd $HOME/.fonts
+#put the nerdfonts in the ~/.fonts directory
+#download ubuntu nerd fonts # link from https://www.nerdfonts.com/font-downloads
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Ubuntu.zip
+#unzip the Ubuntu.zip file
+unzip Ubuntu.zip
+#remove the zip file now
+rm Ubuntu.zip
+#refresh font cache so progrmas that use fontconfig can show available fonts on the system - forcefully and -verbose
+sudo fc-cache -f -v
+###############################
 
 #installing suckless software
 #################
@@ -132,8 +153,6 @@ sudo apt install calibre -y
 #python3-pip python package installer
 sudo apt install python3-pip -y
 
-#unzip .zip files
-sudo apt install unzip -y
 
 #figlet just lets you make cool looking big text in terminal
 sudo apt install figlet -y
