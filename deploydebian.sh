@@ -209,3 +209,6 @@ sudo apt install dunst -y
 #youtube-dl 
 sudo apt install youtube-dl -y
 
+#gui torrent client qbittorrent
+sudo apt install qbittorrent -y
+
