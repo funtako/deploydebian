@@ -20,6 +20,11 @@ dotfilesloc=$HOME/funtako/dot-files
 
 
 
+#create directory for screenshots folder that will be used with maim and my scripts and sxhkd
+mkdir -p $HOME/pictures/screenshots
+
+#maim terminal screenshots printscreen
+sudo apt install maim -y
 
 #create a directory for music this will be the directory for mpd and ncmpcpp
 mkdir $HOME/music
@@ -182,8 +187,6 @@ sudo apt install screenkey -y
 #aptitude used in my scripts pkgs1.sh and upgrades1.sh lets me see how many packages i have installed from apt
 sudo apt install aptitude -y
 
-#maim terminal screenshots printscreen
-sudo apt install maim -y
 
 ######################
 #all this is needed for music
@@ -202,6 +205,7 @@ sudo apt install mpdris2 -y
 
 ####################
 #needed for desktop notifications
+#notify-send for creating custom notifications libnotify-bin
 sudo apt instlal libnotify-bin -y
 sudo apt install dunst -y
 ####################
@@ -209,6 +213,27 @@ sudo apt install dunst -y
 #youtube-dl 
 sudo apt install youtube-dl -y
 
+
 #gui torrent client qbittorrent
 sudo apt install qbittorrent -y
+
+#go needed to install lf file manager
+sudo apt install golang -y
+
+#lf its like ranger but faster terminal based file manager to update it though you might need to 
+#update manually by getting it again from github
+#just make sure we are in home directory for this
+cd $HOME
+#because we are using go version <1.17 we are doing this 
+#by the time your run this script it might be using  later version of go
+# For go version < 1.17
+env CGO_ENABLED=0 GO111MODULE=on go get -u -ldflags="-s -w" github.com/gokcehan/lf
+
+figlet check version of GO this might need to be changed and check github page for lf
+#https://github.com/gokcehan/lf
+
+#now move lf from the folder in home to /usr/bin
+sudo cp $HOME/go/bin/lf /usr/bin
+
+
 
