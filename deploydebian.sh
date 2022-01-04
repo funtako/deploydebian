@@ -217,6 +217,10 @@ sudo apt install youtube-dl -y
 #gui torrent client qbittorrent
 sudo apt install qbittorrent -y
 
+#fuzzy FuZzy finder - lets you quickly search to find a file
+sudo apt install fzf -y
+
+
 #go needed to install lf file manager
 sudo apt install golang -y
 
@@ -234,6 +238,8 @@ figlet check version of GO this might need to be changed and check github page f
 
 #now move lf from the folder in home to /usr/bin
 sudo cp $HOME/go/bin/lf /usr/bin
+
+
 
 
 
