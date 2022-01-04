@@ -22,6 +22,8 @@ dotfilesloc=$HOME/funtako/dot-files
 
 #create directory for screenshots folder that will be used with maim and my scripts and sxhkd
 mkdir -p $HOME/pictures/screenshots
+#directory for wallpapers
+mkdir -p $HOME/pictures/wallpapers
 
 #maim terminal screenshots printscreen
 sudo apt install maim -y
