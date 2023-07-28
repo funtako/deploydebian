@@ -39,6 +39,7 @@ sudo update-grub
 
 sucklessloc=$HOME/suckless
 dotfilesloc=$HOME/funtako/dot-files
+programming_loc=$HOME/programming/shell-scripts
 
 #make some sudo commands not need password like shutdown reboot and others
 echo "$USER ALL = NOPASSWD:/sbin/reboot, /sbin/shutdown" | sudo tee -a /etc/sudoers
@@ -148,10 +149,7 @@ cd $HOME
 git clone https://github.com/funtako/dot-files.git $dotfilesloc
 #give all the scripts in that folder ability to execute them by changing the permissions
 sudo chmod +x $dotfilesloc/scripts/* 
-#give the scripts the owner as root
-sudo chown root:root $dotfilesloc/scripts/*
-#copy all the scripts to /usr/local/bin
-sudo cp $dotfilesloc/scripts/* /usr/local/bin
+sudo cp -r $dotfilesloc/scripts/ $programming_loc
 
 #move all the files from my dot-files git repository and put them in my home directory
 #using rsync because cp wasn't letting me move hidden . files
